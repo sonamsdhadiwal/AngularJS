@@ -1,0 +1,91 @@
+<br>
+<div class="container">
+    <h2>List of current Employees</h2>
+    <div class="addnew">
+        <form class="form-inline" ng-submit="addEmp()">
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="empFname" id="name" placeholder="Employee First Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="empLname" id="name" placeholder="Employee Last Name">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" ng-model="empEmail" id="email" placeholder="Enter your E-mail">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" ng-model="empCity" id="city" placeholder="Enter your City">
+            </div>
+            <div class="form-group">
+                <input type="date" class="form-control" ng-model="empBdate" name="bDay" id="bdate" placeholder="MM/DD/YYYY">
+            </div>
+
+            <button type="submit" class="btn btn-dark">
+                <i class="fas fa-user-plus fa-lg"></i>
+            </button>
+        </form>
+    </div>
+    <br>
+    <table class="table table-dark table-striped" ng-hide="hideTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Employee Name
+                    <i class="fas fa-sort-alpha-down fa-md" ng-click="orderByMe('lastname')"></i>
+                </th>
+                <th>E-mail</th>
+                <th>City</th>
+                <th>Age
+                    <i class="fas fa-sort" ng-click="orderByMe('age')"></i>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="x in data | orderBy:myOrderBy">
+                <td>{{x.id}}</td>
+                <td>{{x.lastname}}, {{x.firstname}}</td>
+                <td>{{x.email}}</td>
+                <td>{{x.city}}</td>
+                <td>{{x.age}} </td>
+                <td>
+                    <a>
+                        <button class="btn btn-success" ng-click="edit(x.id-1)">Edit Details</button>
+                    </a>
+                </td>
+                <td>
+                    <button class="btn btn-danger" ng-click="removeEmp(x.id)">Delete employee</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div class="container main" ng-hide="hideElement">
+    <h3>Edit Details</h3>
+    <br>
+    <div class="form-group">
+        <label for="usr">First Name:</label>
+        <input type="text" class="form-control" id="usr" ng-model="empnewLname">
+    </div>
+    <div class="form-group">
+        <label for="usr">Last Name:</label>
+        <input type="text" class="form-control" id="usr" ng-model="empnewFname">
+    </div>
+    <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" class="form-control" ng-model="empnewEmail" id="email">
+    </div>
+    <div class="form-group">
+        <label for="city">City:</label>
+        <input type="text" class="form-control" ng-model="empnewCity" id="city">
+    </div>
+    <div class="form-group">
+        <label for="bDate">Birth of Date:</label>
+        <input type="number" class="form-control" ng-model="empnewBdate" id="age">
+    </div>
+    <button class="btn btn-success" ng-click="saveDetails()">Save</button>
+    <a href="#!cancel">
+        <button class="btn btn-light">Cancel</button>
+    </a>
+</div>
+<br><br><br>

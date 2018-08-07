@@ -1,0 +1,25 @@
+<div class="container main">
+  <h3>Edit Details</h3>
+  <br>
+  <div class="form-group">
+      <label for="usr">Name:</label>
+      <input type="text" class="form-control" id="usr" ng-model="empnewFullname">
+  </div>
+  <div class="form-group">
+      <label for="email">E-mail:</label>
+      <input type="email" class="form-control" ng-model="empnewEmail" id="email">
+  </div>
+  <div class="form-group">
+      <label for="city">City:</label>
+      <input type="text" class="form-control" ng-model="city" id="city">
+  </div>
+  <div class="form-group">
+      <label for="bDate">Birth of Date:</label>
+      <input type="number" class="form-control" ng-model="empnewBdate" id="age">
+  </div>
+  <button class="btn btn-success" ng-click="saveDetails($index)">Save</button>
+  <a href="#!cancel">
+      <button class="btn btn-light">Cancel</button>
+  </a>
+</div>
+<br><br><br>

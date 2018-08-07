@@ -1,0 +1,26 @@
+body {
+    background-color: #f2f2f2;
+}
+
+.main {
+    background-color: #74707025;
+    border-radius: 15px;
+    padding: 25px;
+    width: 40%;
+    margin-top: 2rem;
+}
+
+#footer{
+    color: #d9d9d9;
+}
+a.nav-link:hover {
+    font-weight: bold;
+}
+.nav-link:active {
+    font-weight: bold;
+}
+.addnew * input {
+    width: 50%;
+    margin: 5px;
+    
+}
